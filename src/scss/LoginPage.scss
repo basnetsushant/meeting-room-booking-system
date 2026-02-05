@@ -1,0 +1,152 @@
+:root {
+  --primary-color: #9466ff;
+  --secondary-color: #653bc6;
+  --button-color: #472a8c;
+  --font: "Roboto";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-page {
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.login-card {
+  width: calc(100% - 117px - 127px);
+  margin: 150px 127px;
+  border-radius: 24px !important;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Inner layout */
+.login-layout {
+  padding: 78px 86px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.login-content {
+  display: flex;
+  width: 100%;
+}
+
+/* lleft section: logo and text */
+.login-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  img {
+    width: 168px;
+    height: 84px;
+  }
+
+  .login-text {
+    margin-top: 24px;
+    line-height: 28px;
+    color: #333;
+    font-family: var(--font);
+  }
+}
+
+/* Right section: form */
+.login-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Grouped textfields */
+.fields-group {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .field-texts .MuiOutlinedInput-root {
+    border-radius: 16px;
+    min-height: 56px;
+
+    .MuiOutlinedInput-input {
+      padding-left: 22px;
+      //   box-sizing: border-box;
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border-color: var(--primary-color);
+    }
+
+    &:hover .MuiOutlinedInput-notchedOutline {
+      border-color: var(--primary-color);
+    }
+
+    &.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border-color: var(--button-color);
+      border-width: 2px;
+    }
+  }
+
+  .MuiInputLabel-root {
+    padding-left: 15px;
+  }
+
+  fieldset {
+    padding-left: 20px;
+  }
+}
+
+.options-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-family: var(--font);
+  }
+
+  .MuiFormControlLabel-root {
+    color: var(--secondary-color);
+    font-weight: 500;
+
+    .MuiCheckbox-root {
+      color: var(--secondary-color);
+    }
+
+    .MuiCheckbox-root.Mui-checked {
+      color: var(--secondary-color);
+    }
+  }
+}
+
+.button-group {
+  width: 100%;
+
+  button {
+    width: 100%;
+    background-color: var(--button-color);
+    border-radius: 16px;
+    padding: 12px 0;
+    color: #fff;
+  }
+}
+
+.field-texts {
+  width: 100%;
+}
