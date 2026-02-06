@@ -8,8 +8,24 @@ import {
   Link,
 } from "@mui/material";
 import "../scss/LoginPage.scss";
+import PasswordInput from "./PasswordInput";
+import { useState } from "react";
 
 export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // if (!email || !password) {
+    //   alert("Please fill in all fields");
+    //   return;
+    // }
+
+    // console.log({ email, password });
+  };
+
   return (
     <div className="login-page">
       <Card className="login-card">
@@ -27,20 +43,25 @@ export default function LoginPage() {
             </div>
 
             <div className="login-right">
-              <form className="login-form">
+              <form
+                className="login-form"
+                onSubmit={handleSubmit}
+              >
                 <div className="fields-group">
                   <TextField
                     label="Email"
+                    type="email"
                     fullWidth
                     className="field-texts"
                     variant="outlined"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
-                  <TextField
-                    label="Password"
-                    type="password"
-                    fullWidth
+
+                  <PasswordInput
+                    password={password}
+                    handlePassword={(e) => setPassword(e.target.value)}
                     className="field-texts"
-                    variant="outlined"
                   />
                 </div>
 
@@ -51,6 +72,7 @@ export default function LoginPage() {
                   >
                     Forgot password?
                   </Link>
+
                   <FormControlLabel
                     control={<Checkbox />}
                     label="Remember me"

@@ -135,6 +135,17 @@
   }
 }
 
+/* Base */
+.MuiInputLabel-root {
+  font-family: var(--font);
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+.MuiFormControl-root .MuiInputLabel-root.MuiInputLabel-shrink {
+  color: var(--button-color) !important;
+}
+
 .button-group {
   width: 100%;
 
@@ -149,4 +160,14 @@
 
 .field-texts {
   width: 100%;
+}
+
+/* Keep label color unchanged on error */
+.MuiInputLabel-root.Mui-error {
+  color: #999 !important;
+}
+
+/* Red border only when error */
+.MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+  border-color: #d32f2f;
 }
